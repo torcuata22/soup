@@ -32,4 +32,7 @@ soup = BeautifulSoup(contents, 'html.parser') #represents the whole html code
 
 # section_heading = soup.find(name="h3", class_="heading")
 
-#Also works for CSS:
+#Also works for CSS (use same selectors as css):
+company_url = soup.select_one(selector="p a") #returns first matching item, select() returns a list of all matching items
+name = soup.select_one(selector="#name") #to select an id
+soup.select(selector=".heading") #returns list of all tags with class = "heading"
