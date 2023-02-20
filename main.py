@@ -31,8 +31,17 @@ for article_tag in articles:
 #to get only point numbers, we can split the string by the space and grab the first item:
 article_upvotes = [int(score.getText().split()[0]) for score in soup.find_all(name="span", class_="score")]
 
-print(article_texts)
-print(article_links)
-print(article_upvotes)
+# print(article_texts)
+# print(article_links)
+# print(article_upvotes)
 
 #Sort from highest upvotes to lowest:
+highest_number = max(article_upvotes)
+# print(highest_number)
+index_highest=article_upvotes.index(highest_number)
+print(index_highest)
+highest_upvote_link=article_links[index_highest]
+highest_upvote_article_text=article_texts[index_highest]
+
+print(highest_upvote_link)
+print(highest_upvote_article_text)
